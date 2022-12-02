@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Events{% endblock %}
+{% block body %}
+    {% for message in app.flashes('notice') %}
+   <div class="alert alert-success">
+    {{ message }}
+   </div>
+    {% endfor %}
+
+   <div class="container mt-5 mb-5">
+    <h1 class="page-header mb-5"> Latest events </h1>
+    <div class="row" style="margin: 0 auto;">
+    {% for event in events %}
+
+        <div class="card col-lg-4 col-md-6 col-sm-12 p-0 mb-3 me-4" style="width: 18rem;">
+        <img src="{{event.image}}" class="card-img-top img-fluid" alt="{{event.image}}">
+
+        <div class="card-body">
+        <h5 class="card-title">{{event.name}}</h5>
+        <p class="card-text">Date: {{event.time|date()}}</p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{event.description}}</li>
+        <li class="list-group-item">Capacity: {{event.capacity}} people</li>
+        <li class="list-group-item">Contact us: {{event.email}}</li>
+        <li class="list-group-item">Mobile: {{event.phone}}</li>
+        <li class="list-group-item">Loc: {{event.address}}</li>
+        <li class="list-group-item"><a href="{{event.url}}" class="btn btn-secondary">Visit Website</a></li>
+        </ul>
+
+        <div class="card-footer">
+        <a href="/details/{{event.id}}" class="btn btn-primary">Details</a>     
+        <a href="/edit/{{event.id}}" class="btn btn-warning">Edit</a>
+        <a href="/delete/{{event.id}}" class="btn btn-danger">Delete</a>
+        </div>
+
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

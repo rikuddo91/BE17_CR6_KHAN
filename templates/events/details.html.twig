@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details of event{% endblock %}
+{% block body %}
+<div class="container">
+<div class="row" style="margin: 0 auto;">
+   <div class="card p-0 mt-5 mb-5" style="width: 30rem; margin: 0 auto;">
+        <img src="{{events.image}}" class="card-img-top" alt="{{events.image}}">
+        <div class="card-body">
+        <h5 class="card-title">{{events.name}}</h5>
+        <p class="card-text">Date: {{events.time|date()}}</p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{events.description}}</li>
+        <li class="list-group-item">Capacity: {{events.capacity}} people</li>
+        <li class="list-group-item">Contact us: {{events.email}}</li>
+        <li class="list-group-item">Mobile: {{events.phone}}</li>
+        <li class="list-group-item">Loc: {{events.address}}</li>
+        <li class="list-group-item"><a href="{{events.url}}" class="btn btn-secondary">Visit Website</a></li>
+        </ul>
+        <div class="card-footer">
+        <a class="btn btn-success" href="/">Back to home</a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
