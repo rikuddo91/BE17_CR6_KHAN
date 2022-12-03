@@ -12,13 +12,13 @@
 
         <ul class="list-group list-group-flush">
         <li class="list-group-item">{{events.description}}</li>
-        <li class="list-group-item">Capacity: {{events.capacity}} people</li>
-        <li class="list-group-item">Contact us: {{events.email}}</li>
-        <li class="list-group-item">Mobile: {{events.phone}}</li>
-        <li class="list-group-item">Loc: {{events.address}}</li>
-        <li class="list-group-item"><a href="{{events.url}}" class="btn btn-secondary">Visit Website</a></li>
+        <li class="list-group-item"><b>Location</b>: {{events.address}}</li>
+        <li class="list-group-item"><b>Capacity</b>: {{events.capacity}} people</li>
+        <li class="list-group-item"><b>Contact us</b>: {{events.email}}</li>
+        <li class="list-group-item"><b>Tel</b>: {{events.phone}}</li>
+        <li class="list-group-item text-center"><a href="{{events.url}}" class="btn btn-secondary">Visit Website</a></li>
         </ul>
-        <div class="card-footer">
+        <div class="card-footer text-center">
         <a class="btn btn-success" href="/">Back to home</a>
         </div>
     </div>
